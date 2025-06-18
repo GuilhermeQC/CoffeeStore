@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#DFBB93">
+
+    <!-- TOPO -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#5E361C"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="Editar Pedido"
+            android:textColor="#DFBB93"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <!-- SCROLL PRINCIPAL -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- FORMULÁRIO -->
+            <TextView
+                android:text="Nome do Cliente"
+                android:textColor="#432712"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:hint="Digite o nome do cliente"
+                android:background="@drawable/edit_background"
+                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="6dp"/>
+
+            <TextView
+                android:text="Mesa"
+                android:textColor="#432712"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:hint="Digite o nº da mesa (opcional)"
+                android:background="@drawable/edit_background"
+                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="6dp"/>
+
+            <TextView
+                android:text="Valor Total"
+                android:textColor="#432712"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:hint="R$ 00,00"
+                android:enabled="false"
+                android:background="@drawable/edit_background"
+                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="6dp"/>
+
+            <!-- TÍTULO PRODUTOS -->
+            <TextView
+                android:text="▼ TODOS OS PRODUTOS"
+                android:textColor="#432712"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!-- CARD PRODUTO - EXEMPLO -->
+            <include layout="@layout/card_produto"/>
+
+            <include layout="@layout/card_produto"/>
+
+            <include layout="@layout/card_produto"/>
+            <include layout="@layout/card_produto"/>
+            <include layout="@layout/card_produto"/>
+            <include layout="@layout/card_produto"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- BOTÃO SALVAR -->
+    <Button
+        android:text="Salvar Pedido"
+        android:backgroundTint="#5E361C"
+        android:textColor="#DFBB93"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <!-- MENU FIXO INFERIOR -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:background="#5E361C"
+        android:weightSum="3">
+
+        <!-- Botão Pedidos -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/pedidos"/>
+
+        </LinearLayout>
+
+        <!-- Botão Novo Pedido -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/novo"/>
+
+        </LinearLayout>
+
+        <!-- Botão Grid ou Config -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/produtos"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
