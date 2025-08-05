@@ -15,10 +15,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="left">
+        android:gravity="center_vertical">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/text_view_numero_pedido"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Pedido #001"
@@ -27,9 +28,9 @@
             android:textStyle="bold"/>
 
         <TextView
+            android:id="@+id/text_view_hora_cliente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="Hora pedido: 15:00\nCliente: Fulano de tal"
             android:textColor="#432712"
             android:textSize="12sp"
@@ -37,6 +38,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/text_view_itens"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Itens do pedido:\n1x Produto 123\n2x Produto 456"
@@ -48,29 +50,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="fill_horizontal"
+        android:gravity="bottom"
         android:layout_marginTop="8dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/text_view_valor"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:text="Valor:\nR$ 99,90"
             android:textColor="#432712"
             android:textSize="12sp"/>
 
         <TextView
+            android:id="@+id/text_view_mesa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
+            android:layout_marginEnd="16dp"
             android:text="Mesa:\n001"
             android:textColor="#432712"
             android:textSize="12sp"/>
 
         <ImageView
+            android:id="@+id/image_view_editar"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:layout_weight="0.1"
             android:src="@drawable/botao_editar"
             android:contentDescription="Editar"/>
     </LinearLayout>

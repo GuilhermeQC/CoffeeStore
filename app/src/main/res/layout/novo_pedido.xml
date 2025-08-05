@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout_novo_pedido"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,222 +13,137 @@
         android:layout_height="60dp"
         android:background="#5E361C"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <ImageView
+            android:id="@+id/button_voltar"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/voltar"
+            android:contentDescription="Voltar"/>
 
         <TextView
+            android:id="@+id/text_view_titulo"
             android:text="Novo Pedido"
             android:textColor="#DFBB93"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"/>
+
+        <ImageView
+            android:id="@+id/button_confirmar"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/baseline_check_24"
+            android:contentDescription="Confirmar"
+            android:visibility="gone"/>
+
     </LinearLayout>
 
-    <!-- SCROLL PRINCIPAL -->
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp">
-
-            <!-- FORMULÁRIO -->
-            <TextView
-                android:text="Nome do Cliente"
-                android:textColor="#5E361C"
-                android:textSize="14sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <EditText
-                android:hint="Digite o nome do cliente"
-                android:background="@drawable/edit_background"
-                android:layout_marginTop="4dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="6dp"/>
-
-            <TextView
-                android:text="Mesa"
-                android:textColor="#5E361C"
-                android:textSize="14sp"
-                android:layout_marginTop="8dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <EditText
-                android:hint="Digite o nº da mesa (opcional)"
-                android:background="@drawable/edit_background"
-                android:layout_marginTop="4dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="6dp"/>
-
-            <TextView
-                android:text="Valor Total"
-                android:textColor="#5E361C"
-                android:textSize="14sp"
-                android:layout_marginTop="8dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <EditText
-                android:hint="R$ 00,00"
-                android:enabled="false"
-                android:background="@drawable/edit_background"
-                android:layout_marginTop="4dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="6dp"/>
-
-            <!-- SEÇÃO PRODUTOS -->
-            <TextView
-                android:text="▼ TODOS OS PRODUTOS"
-                android:textColor="#5E361C"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginTop="16dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <!-- PRODUTO 1 -->
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#E2DBBF"
-                android:padding="8dp"
-                android:layout_marginTop="8dp"
-                android:elevation="2dp"
-                android:backgroundTint="#E2DBBF"
-                android:gravity="center_vertical">
-
-                <ImageView
-                    android:src="@drawable/image_include"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:scaleType="centerInside"/>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="8dp">
-
-                    <TextView
-                        android:text="Lorem ipsum dolor sit amet, consectetur."
-                        android:textColor="#5E361C"
-                        android:textSize="14sp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                    <TextView
-                        android:text="Valor: R$ 99,99"
-                        android:textColor="#5E361C"
-                        android:textSize="14sp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-
-                <!-- QUANTIDADE -->
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <Button
-                        android:text="-"
-                        android:minWidth="0dp"
-                        android:minHeight="0dp"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:backgroundTint="#5E361C"
-                        android:textColor="#FFFFFF"/>
-
-                    <TextView
-                        android:text="1"
-                        android:layout_marginHorizontal="8dp"
-                        android:textSize="16sp"
-                        android:textColor="#5E361C"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                    <Button
-                        android:text="+"
-                        android:minWidth="0dp"
-                        android:minHeight="0dp"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:backgroundTint="#5E361C"
-                        android:textColor="#FFFFFF"/>
-                </LinearLayout>
-            </LinearLayout>
-
-            <!-- (Repete bloco para outros produtos) -->
-
-            <!-- BOTÃO FINALIZAR -->
-            <Button
-                android:text="Finalizar Pedido"
-                android:backgroundTint="#5E361C"
-                android:textColor="#DFBB93"
-                android:layout_marginTop="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
-    </ScrollView>
-
-    <!-- Menu de Navegação Inferior -->
+    <!-- Conteúdo Principal -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:orientation="horizontal"
-        android:background="#5E361C"
-        android:weightSum="3">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <!-- Pedidos -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+        <!-- FORMULÁRIO -->
+        <TextView
+            android:text="Nome do Cliente"
+            android:textColor="#5E361C"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/edit_text_nome_cliente"
+            android:hint="Digite o nome do cliente"
+            android:textStyle="bold"
+            android:textColor="#432712"
+            android:textColorHint="#432712"
+            android:textSize="18sp"
+            android:background="@drawable/edit_background"
+            android:layout_marginTop="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:inputType="textPersonName|textCapWords"/>
+
+        <TextView
+            android:text="Mesa"
+            android:textColor="#5E361C"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/edit_text_mesa"
+            android:hint="Digite o nº da mesa"
+            android:textStyle="bold"
+            android:textColor="#432712"
+            android:textColorHint="#432712"
+            android:textSize="18sp"
+            android:background="@drawable/edit_background"
+            android:layout_marginTop="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:inputType="number"/>
+
+        <TextView
+            android:text="Valor Total"
+            android:textColor="#5E361C"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/text_view_valor_total"
+            android:text="R$ 0,00"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#432712"
+            android:background="@drawable/edit_background"
+            android:layout_marginTop="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dp"/>
+
+        <!-- SEÇÃO PRODUTOS -->
+        <TextView
+            android:text="▼ TODOS OS PRODUTOS"
+            android:textColor="#5E361C"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_selecao_produtos"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
-            android:gravity="center">
+            android:layout_marginTop="8dp"/>
 
-            <ImageView
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@drawable/pedidos"/>
-        </LinearLayout>
-
-        <!-- Novo Pedido -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:src="@drawable/novo"/>
-        </LinearLayout>
-
-        <!-- Produtos -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@drawable/produtos"/>
-        </LinearLayout>
     </LinearLayout>
+
+    <!-- BOTÃO FINALIZAR -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_finalizar_pedido"
+        android:text="Finalizar Pedido"
+        android:backgroundTint="#5E361C"
+        android:textColor="#DFBB93"
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"/>
 
 </LinearLayout>

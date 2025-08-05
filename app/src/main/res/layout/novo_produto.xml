@@ -1,166 +1,174 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_layout_novo_produto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:background="#DFBB93">
 
+    <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#5E361C"
+        android:padding="12dp">
 
-        <!-- Header -->
+        <ImageView
+            android:id="@+id/button_voltar"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/voltar"
+            android:contentDescription="Voltar"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/logoImageViewPequena"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logo_pequena"
+                android:scaleType="centerInside"/>
+
+            <TextView
+                android:id="@+id/text_view_titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Novo Produto"
+                android:textColor="#DFBB93"
+                android:textSize="18sp"
+                android:paddingStart="8dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:background="#5E361C"
-            android:padding="12dp">
+            android:orientation="vertical"
+            android:padding="16dp">
 
+            <!-- Ícone do Produto -->
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/voltar"
-                android:contentDescription="Voltar"/>
+                android:id="@+id/image_view_selecionar_foto"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/image_include"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="Adicionar imagem"
+                android:padding="8dp"/>
 
-            <LinearLayout
-                android:layout_width="0dp"
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#5E361C"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Nome do Produto -->
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:text="Nome do Produto"
+                android:textColor="#5E361C"
+                android:textSize="14sp"/>
 
-                <ImageView
-                    android:id="@+id/logoImageViewPequena"
+            <EditText
+                android:id="@+id/edit_text_nome_produto"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Digite o nome do produto"
+                android:background="@drawable/edittext_background"
+                android:padding="12dp"
+                android:textColor="#5E361C"
+                android:textColorHint="#5E361C"/>
+
+            <!-- Descrição -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Descrição do Produto"
+                android:textColor="#5E361C"
+                android:textSize="14sp"
+                android:layout_marginTop="12dp"/>
+
+            <EditText
+                android:id="@+id/edit_text_descricao"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:hint="Digite a descrição do produto"
+                android:background="@drawable/edittext_background"
+                android:padding="12dp"
+                android:gravity="top"
+                android:textColor="#5E361C"
+                android:textColorHint="#5E361C"/>
+
+            <!-- Valor -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Valor do Produto"
+                android:textColor="#5E361C"
+                android:textSize="14sp"
+                android:layout_marginTop="12dp"/>
+
+            <EditText
+                android:id="@+id/edit_text_valor"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="R$ 0,00"
+                android:background="@drawable/edittext_background"
+                android:padding="12dp"
+                android:inputType="numberDecimal"
+                android:textColor="#5E361C"
+                android:textColorHint="#5E361C"/>
+
+            <!-- Switch Inativar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+
+                <CheckBox
+                    android:id="@+id/checkbox_inativar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/logo_pequena"
-                    android:scaleType="centerInside"/>
-
+                    android:buttonTint="#5E361C"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Novo Produto"
-                    android:textColor="#DFBB93"
-                    android:textSize="18sp"
-                    android:paddingStart="8dp"/>
+                    android:text="Inativar produto?"
+                    android:textColor="#5E361C"
+                    android:textSize="14sp"
+                    android:layout_marginStart="8dp"/>
             </LinearLayout>
+
+            <!-- Botão Salvar -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_salvar_produto"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Salvar produto"
+                android:textColor="#DFBB93"
+                android:textSize="16sp"
+                app:cornerRadius="16dp"
+                app:backgroundTint="#5E361C"
+                android:layout_margin="16dp"/>
+
         </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="80dp"/>
-
-        <!-- Ícone do Produto -->
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/image_include"
-            android:layout_gravity="center_horizontal"
-            android:contentDescription="Adicionar imagem"
-            android:padding="8dp"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#5E361C"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"/>
-
-        <!-- Nome do Produto -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nome do Produto"
-            android:textColor="#5E361C"
-            android:textSize="14sp"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="Digite o nome do produto"
-            android:background="@drawable/edittext_background"
-            android:padding="12dp"
-            android:textColor="#5E361C"
-            android:textColorHint="#5E361C"/>
-
-        <!-- Descrição -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Descrição do Produto"
-            android:textColor="#5E361C"
-            android:textSize="14sp"
-            android:layout_marginTop="12dp"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:hint="Digite a descrição do produto"
-            android:background="@drawable/edittext_background"
-            android:padding="12dp"
-            android:gravity="top"
-            android:textColor="#5E361C"
-            android:textColorHint="#5E361C"/>
-
-        <!-- Valor -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Valor do Produto"
-            android:textColor="#5E361C"
-            android:textSize="14sp"
-            android:layout_marginTop="12dp"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="R$ 00,00"
-            android:background="@drawable/edittext_background"
-            android:padding="12dp"
-            android:inputType="numberDecimal"
-            android:textColor="#5E361C"
-            android:textColorHint="#5E361C"/>
-
-        <!-- Switch Inativar -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginTop="8dp">
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:buttonTint="#5E361C"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Inativar produto?"
-                android:textColor="#5E361C"
-                android:textSize="14sp"
-                android:layout_marginStart="8dp"/>
-        </LinearLayout>
-
-        <!-- Botão Salvar -->
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="Salvar produto"
-            android:textColor="#DFBB93"
-            android:textSize="16sp"
-            app:cornerRadius="16dp"
-            app:backgroundTint="#5E361C"
-            android:layout_margin="16dp"/>
-
-        <!-- Espaço extra pro rodapé não sobrepor -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="80dp"/>
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
+</LinearLayout>

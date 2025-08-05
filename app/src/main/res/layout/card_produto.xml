@@ -5,10 +5,12 @@
     android:orientation="horizontal"
     android:background="@drawable/card_background"
     android:padding="12dp"
-    android:layout_marginBottom="12dp">
+    android:layout_marginBottom="12dp"
+    android:gravity="center_vertical">
 
     <!-- Imagem Produto -->
     <ImageView
+        android:id="@+id/image_view_produto"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:src="@drawable/image_include"
@@ -26,31 +28,48 @@
         android:layout_marginStart="12dp">
 
         <TextView
+            android:id="@+id/text_view_nome_produto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Status: Ativo"
-            android:textSize="14sp"
+            android:text="Nome do Produto"
+            android:textSize="16sp"
+            android:textStyle="bold"
             android:textColor="#432712"/>
 
         <TextView
+            android:id="@+id/text_view_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            android:text="Status: Ativo"
             android:textSize="12sp"
             android:textColor="#432712"
             android:layout_marginTop="2dp"/>
 
         <TextView
+            android:id="@+id/text_view_descricao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            android:textSize="12sp"
+            android:textColor="#432712"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_marginTop="2dp"/>
+
+        <TextView
+            android:id="@+id/text_view_valor_produto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Valor: R$ 99,90"
             android:textSize="12sp"
+            android:textStyle="bold"
             android:textColor="#432712"
             android:layout_marginTop="4dp"/>
     </LinearLayout>
 
     <!-- Botão editar -->
     <ImageView
+        android:id="@+id/image_view_editar_produto"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:src="@drawable/botao_editar"

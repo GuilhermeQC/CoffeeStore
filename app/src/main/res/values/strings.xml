@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">Teste</string>
+    <string name="app_name">CoffeeStore</string>
+
+    <string name="formato_numero_pedido">Pedido #%1$03d</string>
+    <string name="formato_hora_cliente">Hora pedido: %1$s\nCliente: %2$s</string>
+    <string name="formato_itens">Itens do pedido:\n%1$s</string>
+    <string name="formato_valor">Valor:\nR$ %1$.2f</string>
+    <string name="formato_mesa">Mesa:\n%1$03d</string>
+
+
+    <string name="formato_valor_produto">Valor: R$ %1$.2f</string>
+    <string name="status_ativo">Status: Ativo</string>
+    <string name="status_inativo">Status: Inativo</string>
+
+    <string name="formato_valor_reais">R$ %.2f</string>
 </resources>

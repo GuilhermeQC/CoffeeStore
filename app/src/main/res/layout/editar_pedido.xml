@@ -119,57 +119,6 @@
 
 
     <!-- MENU FIXO INFERIOR -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:orientation="horizontal"
-        android:background="#5E361C"
-        android:weightSum="3">
-
-        <!-- Botão Pedidos -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@drawable/pedidos"/>
-
-        </LinearLayout>
-
-        <!-- Botão Novo Pedido -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:src="@drawable/novo"/>
-
-        </LinearLayout>
-
-        <!-- Botão Grid ou Config -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@drawable/produtos"/>
-
-        </LinearLayout>
-    </LinearLayout>
+    <include layout="@layout/bottom_nav_menu"/>
 
 </LinearLayout>

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout_produtos"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="#DFBB93">
 
@@ -32,6 +34,7 @@
 
     <!-- Botão Novo Produto -->
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_novo_produto"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="Novo Produto"
@@ -49,74 +52,17 @@
         android:background="#432712"/>
 
     <!-- Conteúdo Scrollável -->
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_produtos"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:fillViewport="true">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <!-- Cards de Produto -->
-            <include layout="@layout/card_produto"/>
-            <include layout="@layout/card_produto"/>
-            <include layout="@layout/card_produto"/>
-            <include layout="@layout/card_produto"/>
-            <include layout="@layout/card_produto"/>
-
-        </LinearLayout>
-    </ScrollView>
+        android:padding="16dp"
+        android:clipToPadding="false"
+        tools:listitem="@layout/card_produto"
+        tools:itemCount="5"/>
 
     <!-- Menu de Navegação Inferior -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:orientation="horizontal"
-        android:background="#5E361C"
-        android:weightSum="3">
-
-        <!-- Pedidos -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@drawable/pedidos"/>
-        </LinearLayout>
-
-        <!-- Novo Pedido -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:src="@drawable/novo"/>
-        </LinearLayout>
-
-        <!-- Produtos -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@drawable/produtos"/>
-        </LinearLayout>
-    </LinearLayout>
+    <include layout="@layout/bottom_nav_menu"/>
 
 </LinearLayout>

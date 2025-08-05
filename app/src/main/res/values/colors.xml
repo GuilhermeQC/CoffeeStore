@@ -7,4 +7,7 @@
     <color name="milk_and_coffee">#FFDFBB93</color>
     <color name="milk">#FFE2DBBF</color>
     <color name="milk_and_milk">#FFEEc9A0</color>
+
+    <color name="status_ativo_color">#388E3C</color> <!-- Um tom de verde -->
+    <color name="status_inativo_color">#D32F2F</color> <!-- Um tom de vermelho -->
 </resources>

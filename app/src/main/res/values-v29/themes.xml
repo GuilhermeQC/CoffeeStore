@@ -1,0 +1,7 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Este tema será aplicado sobre o tema base para dispositivos com API 29+ -->
+    <style name="Theme.CoffeeStore" parent="Base.Theme.CoffeeStore">
+        <!-- Habilita o modo Edge-to-Edge apenas para API 29 e superior -->
+
+    </style>
+</resources>

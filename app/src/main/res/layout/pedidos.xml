@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#DFBB93">
+
+    android:background="#DFBB93"
+    android:orientation="vertical">
 
     <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:orientation="vertical"
         android:background="#5E361C"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/logoImageViewPequena"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/logo_pequena"
-            android:scaleType="centerInside"/>
+            android:scaleType="centerInside"
+            android:src="@drawable/logo_pequena" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -29,107 +30,56 @@
             android:text="Pedidos"
             android:textColor="#DFBB93"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
-    <!-- Conteúdo Scrollável -->
-    <ScrollView
+    <!-- Conteúdo Principal -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:fillViewport="true">
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <!-- Último Pedido -->
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_marginBottom="8dp"
+            android:text="ÚLTIMO PEDIDO"
+            android:textColor="#432712"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-            <!-- Último Pedido -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ÚLTIMO PEDIDO"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#432712"
-                android:layout_marginBottom="8dp"/>
+        <!-- Damos um ID ao include para poder acessá-lo via código -->
+        <include
+            android:id="@+id/card_ultimo_pedido"
+            layout="@layout/card_pedido"
+            android:visibility="gone"
+            tools:visibility="visible" />
 
-            <include layout="@layout/card_pedido"/>
+        <!-- Todos os Pedidos -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp"
+            android:text="TODOS OS PEDIDOS"
+            android:textColor="#432712"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-            <!-- Todos os Pedidos -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TODOS OS PEDIDOS"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#432712"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="8dp"/>
+        <!-- Substituímos a lista de includes por um RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_todos_pedidos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:itemCount="5"
+            tools:listitem="@layout/card_pedido" />
 
-            <!-- Repetir os cards conforme necessário -->
-            <include layout="@layout/card_pedido"/>
-            <include layout="@layout/card_pedido"/>
-            <include layout="@layout/card_pedido"/>
-            <include layout="@layout/card_pedido"/>
-            <include layout="@layout/card_pedido"/>
-
-        </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
 
     <!-- Menu de Navegação Inferior -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:orientation="horizontal"
-        android:background="#5E361C"
-        android:weightSum="3">
-
-        <!-- Botão Pedidos -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@drawable/pedidos"/>
-
-        </LinearLayout>
-
-        <!-- Botão Novo Pedido -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:src="@drawable/novo"/>
-
-        </LinearLayout>
-
-        <!-- Botão Grid ou Config -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@drawable/produtos"/>
-
-        </LinearLayout>
-    </LinearLayout>
+    <include layout="@layout/bottom_nav_menu"/>
 
 </LinearLayout>

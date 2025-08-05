@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Teste" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.CoffeeStore" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Ex: <item name="colorPrimary">@color/your_primary_color</item> -->
     </style>
 
-    <style name="Theme.Teste" parent="Base.Theme.Teste" />
+    <style name="Theme.CoffeeStore" parent="Base.Theme.CoffeeStore" />
 </resources>
